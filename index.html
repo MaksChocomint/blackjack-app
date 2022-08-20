@@ -13,8 +13,18 @@
     <p id="cards-el">Cards:</p>
     <p id="sum-el">Sum:</p>
     <button id="start" onclick="startGame()">START GAME</button>
+    <div id="refresh-block">
+        <button id="refresh" onclick="refreshGame()">&#9786</button>
+        <p id="arrow"><---Click if does not work</p>
+        <p id="fixed"></p>
+    </div>
     <br>
     <button id="new-card" onclick="newCard()">NEW CARD</button>
+    
+    <form action="#">
+        <p id="bet-p-el">Your bet:<input type="number" id="bet-el" value="0"></p>
+        <input type="submit" id="confirm-el" value="CONFIRM" onclick="confirm()">
+    </form>
     <p id="player-el"></p>
 </body>
 </html>

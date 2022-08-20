@@ -1,11 +1,14 @@
-body {
+* {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
     background: rgb(0, 103, 0);
     text-align: center;
     color: white;
     font-weight: bold;
     font-size: 30px;
-    transition: 0.5s;
+    transition: .5s;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -18,7 +21,6 @@ h1 {
 }
 
 button {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     color: #016f32;
     width: 270px;
@@ -40,3 +42,78 @@ button:hover {
 button:active {
     background: goldenrod;
 }
+
+input {
+    display: block;
+    margin: auto;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 5px;
+}
+
+#confirm-el {
+    transition: .2s;
+}
+
+#confirm-el:hover {
+    background-color: rgb(195, 248, 185);
+}
+
+#confirm-el:active {
+    background-color: aquamarine;
+}
+
+#bet-p-el {
+    margin-bottom: 5;
+}
+
+#bet-el {
+    font-size: 25px;
+    width: 200px;
+}
+
+#refresh {
+    margin: 2.5 20 0 20;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: greenyellow;
+    font-weight: 400;
+    transition: .2s;
+}
+
+#refresh:hover {
+    color: rgb(241, 241, 98);
+    background-color: rgb(113, 245, 108);
+}
+
+#refresh:active {
+    color: #016f32;
+    background-color: greenyellow;
+}
+
+#fixed {
+    position: absolute;
+    margin-left: 30px;
+    font-size: 15px;
+    text-shadow: none;
+    color: rgb(113, 245, 108);
+}
+
+#refresh-block {
+    display: inline;
+    position: absolute;
+}
+
+#arrow {
+    display: inline;
+    font-size: 15px;
+    text-shadow: none;
+    color: rgb(113, 245, 108);
+    margin: 0;
+}
+
+
