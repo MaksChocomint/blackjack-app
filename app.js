@@ -1,19 +1,28 @@
-let firstCard = 10
-let secondCard = 4
-let sum = firstCard + secondCard
+let sum = 0
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
-let cards = [firstCard, secondCard]
+let cards = []
 
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
+let player = {
+    name: "Maksim",
+    money: 145,
+    sayHello: function() {
+        console.log("hello!")
+    }
+}
+player.sayHello()
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.money
 
 function renderGame() {
+    cardsEl.textContent = "Cards: "
     for (let c = 0; c < cards.length; c++) {
-        cardsEl.textContent = "Cards: " + cards[c] + " "
+        cardsEl.textContent += cards[c] + " "
     }
     
     sumEl.textContent = "Sum: " + sum
@@ -30,15 +39,30 @@ function renderGame() {
 }
 
 function startGame() {
+    isAlive = true
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    sum = firstCard + secondCard
+    cards = [firstCard, secondCard]
     renderGame()
 }
 
 function newCard() {
-    message = "Drawing a new card from the deck!"
-    messageEl.textContent = message
+    if (isAlive === true && hasBlackJack === false) {
+        message = "Drawing a new card from the deck!"
+        messageEl.textContent = message
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        setTimeout(renderGame, 1000)
+    }
+}
 
-    let card = 7
-    sum += card
-    cards.push(card)
-    setTimeout(renderGame, 2000)
+function getRandomCard() {
+    let cardValue = Math.floor(Math.random()*13) + 1
+    if (cardValue === 1) {
+        return 11
+    } else if (11 <= cardValue && cardValue <= 13) {
+         return 10
+    } else return cardValue
 }
