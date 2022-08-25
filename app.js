@@ -1,4 +1,4 @@
-let player = {
+const player = {
     name: "Maksim",
     money: 100000,
     bet: 0
@@ -10,11 +10,11 @@ let isAlive = false
 let message = ""
 let cards = []
 
-let messageEl = document.getElementById("message-el")
-let sumEl = document.getElementById("sum-el")
-let cardsEl = document.getElementById("cards-el")
+const messageEl = document.getElementById("message-el")
+const sumEl = document.getElementById("sum-el")
+const cardsEl = document.getElementById("cards-el")
 
-let playerEl = document.getElementById("player-el")
+const playerEl = document.getElementById("player-el")
 playerEl.textContent = player.name + ": $" + player.money
 
 function renderGame() {
